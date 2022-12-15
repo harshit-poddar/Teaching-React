@@ -6,6 +6,7 @@ class Counter extends Component {
     tags: [],
   };
 
+  //1 way to do conditional rendering
   renderTags() {
     if (this.state.tags.length === 0) return <p>There are no tags!</p>;
 
@@ -19,7 +20,15 @@ class Counter extends Component {
   }
 
   render() {
-    return <div>{this.renderTags()}</div>;
+    return(
+      // 2nd way to do conditional rendering
+      <div>
+        
+        {this.state.tags.length === 0 && "please create new tag"}
+        {this.renderTags()}
+      </div>
+    );
+
   }
 }
 
